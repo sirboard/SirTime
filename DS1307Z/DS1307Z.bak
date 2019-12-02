@@ -1,0 +1,244 @@
+EESchema Schematic File Version 4
+LIBS:DS1307Z-cache
+EELAYER 29 0
+EELAYER END
+$Descr User 7874 5118
+encoding utf-8
+Sheet 1 1
+Title "TCA9548 Based 1-To-8 I2C Expander"
+Date "2019-11-14"
+Rev "1"
+Comp "www.SirBoard.com"
+Comment1 "SirBoard"
+Comment2 "SirExpand"
+Comment3 "TCA9548"
+Comment4 ""
+$EndDescr
+$Comp
+L power:GND #PWR0101
+U 1 1 5DF2A97A
+P 3650 3350
+F 0 "#PWR0101" H 3650 3100 50  0001 C CNN
+F 1 "GND" H 3654 3178 50  0000 C CNN
+F 2 "" H 3650 3350 50  0001 C CNN
+F 3 "" H 3650 3350 50  0001 C CNN
+	1    3650 3350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5625 2325 0    50   Input ~ 0
+VCC
+Text GLabel 5625 2425 0    50   Input ~ 0
+GND
+Text GLabel 5625 2625 0    50   Input ~ 0
+SCL
+Text GLabel 5625 2725 0    50   Input ~ 0
+SDA
+Wire Wire Line
+	5775 2325 5625 2325
+Wire Wire Line
+	5625 2425 5775 2425
+Wire Wire Line
+	5775 2625 5625 2625
+Wire Wire Line
+	5625 2725 5775 2725
+$Comp
+L Device:R_US R1
+U 1 1 5DE65C3C
+P 2600 1850
+F 0 "R1" H 2675 1800 50  0000 L CNN
+F 1 "4K7" H 2650 1875 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2640 1840 50  0001 C CNN
+F 3 "~" H 2600 1850 50  0001 C CNN
+	1    2600 1850
+	1    0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open A1
+U 1 1 5DE6A0ED
+P 2600 2225
+F 0 "A1" V 2600 2338 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 2600 2338 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 2600 2225 50  0001 C CNN
+F 3 "~" H 2600 2225 50  0001 C CNN
+	1    2600 2225
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Open A2
+U 1 1 5DE6A0F3
+P 2850 2225
+F 0 "A2" V 2850 2338 50  0000 C CNN
+F 1 "SolderJumper_2_Open" H 2850 2338 50  0001 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 2850 2225 50  0001 C CNN
+F 3 "~" H 2850 2225 50  0001 C CNN
+	1    2850 2225
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 5DE70A45
+P 3125 1500
+F 0 "#PWR0102" H 3125 1350 50  0001 C CNN
+F 1 "+5V" H 3139 1673 50  0000 C CNN
+F 2 "" H 3125 1500 50  0001 C CNN
+F 3 "" H 3125 1500 50  0001 C CNN
+	1    3125 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Timer_RTC:DS1307Z+ U1
+U 1 1 5DE71315
+P 3650 2750
+F 0 "U1" H 4193 2795 50  0000 L CNN
+F 1 "DS1307Z+" H 4193 2705 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 3650 2250 50  0001 C CNN
+F 3 "https://datasheets.maximintegrated.com/en/ds/DS1307.pdf" H 3650 2750 50  0001 C CNN
+	1    3650 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Crystal Y1
+U 1 1 5DE71908
+P 2575 2900
+F 0 "Y1" V 2530 3031 50  0000 L CNN
+F 1 "Crystal" V 2620 3031 50  0000 L CNN
+F 2 "Crystal:Crystal_SMD_EuroQuartz_EQ161-2Pin_3.2x1.5mm_HandSoldering" H 2575 2900 50  0001 C CNN
+F 3 "~" H 2575 2900 50  0001 C CNN
+	1    2575 2900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2575 2750 2575 2725
+Wire Wire Line
+	2575 2725 2925 2725
+Wire Wire Line
+	2925 2725 2925 2850
+Wire Wire Line
+	2925 2850 3150 2850
+Wire Wire Line
+	3150 2950 2925 2950
+Wire Wire Line
+	2925 2950 2925 3075
+Wire Wire Line
+	2925 3075 2575 3075
+Wire Wire Line
+	2575 3075 2575 3050
+$Comp
+L Device:R_US R2
+U 1 1 5DE74B5D
+P 2850 1850
+F 0 "R2" H 2925 1800 50  0000 L CNN
+F 1 "4K7" H 2900 1875 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 2890 1840 50  0001 C CNN
+F 3 "~" H 2850 1850 50  0001 C CNN
+	1    2850 1850
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	2850 2550 3150 2550
+Wire Wire Line
+	3150 2650 2600 2650
+Wire Wire Line
+	3550 2350 3550 1600
+Wire Wire Line
+	2600 1600 2600 1700
+Wire Wire Line
+	2850 1700 2850 1600
+Wire Wire Line
+	2600 1600 2850 1600
+Wire Wire Line
+	2850 1600 3125 1600
+Wire Wire Line
+	3125 1500 3125 1600
+Connection ~ 3125 1600
+Wire Wire Line
+	3125 1600 3550 1600
+$Comp
+L Device:Battery_Cell BT1
+U 1 1 5DE772AA
+P 4025 1600
+F 0 "BT1" V 4250 1575 50  0000 L CNN
+F 1 "Battery_Cell" V 4175 1425 50  0000 L CNN
+F 2 "Battery:BatteryHolder_Keystone_3000_1x12mm" V 4025 1660 50  0001 C CNN
+F 3 "~" V 4025 1660 50  0001 C CNN
+	1    4025 1600
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3825 1600 3650 1600
+Wire Wire Line
+	3650 1600 3650 2350
+Wire Wire Line
+	4125 1600 4500 1600
+Wire Wire Line
+	4500 1600 4500 3250
+Wire Wire Line
+	4500 3250 3650 3250
+Wire Wire Line
+	3650 3250 3650 3150
+Wire Wire Line
+	3650 3350 3650 3250
+Connection ~ 3650 3250
+Connection ~ 2850 1600
+Wire Wire Line
+	2600 2075 2600 2000
+Wire Wire Line
+	2850 2000 2850 2075
+Wire Wire Line
+	2850 2375 2850 2550
+Wire Wire Line
+	2600 2375 2600 2650
+Text Label 3000 2550 0    50   ~ 0
+SCL
+Text Label 3000 2650 0    50   ~ 0
+SDA
+Text Label 3650 1600 0    50   ~ 0
+VBAT
+Text Label 3275 1600 0    50   ~ 0
+VCC
+Text Label 3850 3250 0    50   ~ 0
+GND
+Text GLabel 4625 2750 2    50   Input ~ 0
+SQW
+Wire Wire Line
+	4625 2750 4150 2750
+Text GLabel 5625 2525 0    50   Input ~ 0
+SQW
+Text GLabel 5625 2825 0    50   Input ~ 0
+VBAT
+Wire Wire Line
+	5775 2525 5625 2525
+Wire Wire Line
+	5625 2825 5775 2825
+$Comp
+L Connector_Generic:Conn_01x06 J1
+U 1 1 5DE8EB09
+P 5975 2625
+F 0 "J1" H 6054 2617 50  0000 L CNN
+F 1 "Conn_01x06" H 6054 2527 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 5975 2625 50  0001 C CNN
+F 3 "~" H 5975 2625 50  0001 C CNN
+	1    5975 2625
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5DE90F8C
+P 2075 2450
+F 0 "C1" H 2190 2495 50  0000 L CNN
+F 1 "1uF" H 2190 2405 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 2113 2300 50  0001 C CNN
+F 3 "~" H 2075 2450 50  0001 C CNN
+	1    2075 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 1600 2075 1600
+Wire Wire Line
+	2075 1600 2075 2300
+Connection ~ 2600 1600
+Wire Wire Line
+	2075 2600 2075 3250
+Wire Wire Line
+	2075 3250 3650 3250
+$EndSCHEMATC
